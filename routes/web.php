@@ -12,5 +12,5 @@ Route::get('/second', function(){
 });
 */
 //If only a view is to be returned, you do not need to define a function.
-Route::view('/','welcome'); 
+Route::view('/','home'); 
 Route::view('/second','second');
