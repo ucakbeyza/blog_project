@@ -18,4 +18,5 @@ Route::get('/second', function(){
 Route::view('/','home')->name(name:'home');
 Route::view('/about','about')->name(name: 'about');
 Route::view('/contact','contact')->name(name:'contact');
+Route::view('article', 'article')->name('article');
 Route::view('/second','second');
