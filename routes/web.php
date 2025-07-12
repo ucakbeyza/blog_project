@@ -12,7 +12,10 @@ Route::get('/second', function(){
 });
 */
 //If only a view is to be returned, you do not need to define a function.
-Route::view('/','home');
-Route::view('/about','about');
-Route::view('/contact','contact');
+
+//When the same URL is used in multiple Blade files, all of them must be updated if the link changes. To avoid this, it2s common to assign names to routes.
+
+Route::view('/','home')->name(name:'home');
+Route::view('/about','about')->name(name: 'about');
+Route::view('/contact','contact')->name(name:'contact');
 Route::view('/second','second');
