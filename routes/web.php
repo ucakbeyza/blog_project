@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 //This structure is generally preferred if dynamic operations are to be performed.
 /* 
@@ -21,5 +21,6 @@ Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::view('/about','about')->name( 'about');
 Route::view('/contact','contact')->name('contact');
-Route::view('article', 'article')->name('article');
+Route::get('article/{post}', [PostController::class, 'show'])->name('article');
 Route::view('/second','second');
+
