@@ -9,7 +9,7 @@ class PostController extends Controller
     {
     
  
-        return view('article', compact('post'));
+        return view('post', compact('post'));
 
  
     }

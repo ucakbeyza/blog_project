@@ -17,10 +17,15 @@ Route::get('/second', function(){
 
 //When the same URL is used in multiple Blade files, all of them must be updated if the link changes. To avoid this, it2s common to assign names to routes.
 
-Route::get('/',[\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
-Route::view('/about','about')->name( 'about');
-Route::view('/contact','contact')->name('contact');
-Route::get('article/{post}', [PostController::class, 'show'])->name('article');
+Route::view('/about','about')
+    ->name( 'about');
+Route::view('/contact','contact')
+    ->name('contact');
+
+Route::get('posts/{post}', [PostController::class, 'show'])
+    ->name('post.show');
 Route::view('/second','second');
 
