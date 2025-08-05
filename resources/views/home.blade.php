@@ -11,7 +11,7 @@
                 <img src="{{ asset('images/placeholder-150x150.png') }}" alt="Post Image" class="w-32 h-32 object-cover rounded">
                 <div>
                     <h3 class="text-lg font-semibold">
-                        <a href="{{ route('post.show', $post )}}" 
+                        <a href="{{ route('posts.show', $post )}}" 
                             class="hover:underline">
                             {{ $post -> title }}
                         </a>
