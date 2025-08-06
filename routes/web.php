@@ -37,6 +37,8 @@ Route::resource('categories', CategoryController::class);
 
 Route::get('/index',[CategoryController::class,'index']);
 
+Route::get('/create', [CategoryController::class, 'create']);
+
 
 
 
