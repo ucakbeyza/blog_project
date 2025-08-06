@@ -39,6 +39,7 @@ Route::get('/index',[CategoryController::class,'index']);
 
 Route::get('/create', [CategoryController::class, 'create']);
 
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 
 
 

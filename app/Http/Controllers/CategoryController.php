@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return view('categories.index', compact('categories'));
-        
+
     }
 
     /**
@@ -38,7 +38,7 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('categories.index')->with('success', 'Kategori eklendi.');
+        return redirect()->route('categories.index')->with('success', 'Added Category.');
     }
 
     /**
