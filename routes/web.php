@@ -35,6 +35,8 @@ Route::resource('posts', PostController::class);
 
 Route::resource('categories', CategoryController::class);
 
+Route::get('/index',[CategoryController::class,'index']);
+
 
 
 
