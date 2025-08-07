@@ -46,7 +46,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -63,14 +63,14 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:categories,name,'.$category->id,
         ]);
 
         $category->update([
             'name' => $request->name,
         ]);
 
-        return redirect()->route('categories.index')->with('success', 'Kategori güncellendi.');
+        return redirect()->route('categories.index')->with('success', 'Category updated.');
     }
 
     /**
