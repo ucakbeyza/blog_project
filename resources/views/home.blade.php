@@ -13,10 +13,10 @@
                     <h3 class="text-lg font-semibold">
                         <a href="{{ route('posts.show', $post )}}" 
                             class="hover:underline">
-                            {{ $post -> title }}
+                            {{ $post->title }}
                         </a>
                     </h3>
-                    <p class="text-gray-600">{{ substr($post -> text, 0,50) }}...</p>
+                    <p class="text-gray-600">{{ substr($post->content, 0,50) }}...</p>
                 </div>
             </article>                
             @endforeach

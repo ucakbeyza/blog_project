@@ -8,7 +8,7 @@
         <img src="{{ asset('images/placeholder-800x400.png') }}" alt="Post Image" class="w-full object-cover rounded mb-4">
         <p class="text-gray-600 mb-4">Published on <span class="font-semibold">{{ $post->created_at->format('F j, Y') }}</span></p>
         <div class="text-gray-800 space-y-4">
-            <p>{{$post->text}}</p>
+            <p>{{$post->content}}</p>
         </div>
     </section>
 </main>

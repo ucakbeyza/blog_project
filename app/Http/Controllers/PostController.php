@@ -38,7 +38,7 @@ public function store(Request $request)
 
     Post::create([
         'title' => $validated['title'],
-        'text' => $validated['content'], 
+        'content' => $validated['content'], 
         'category_id' => $validated['category_id']
     ]);
 
@@ -59,6 +59,7 @@ public function store(Request $request)
     public function edit(Post $post)
     {
         $categories = Category::all();
+        dd($post->toArray());
         return view('posts.edit', compact('post', 'categories'));
     }
 
