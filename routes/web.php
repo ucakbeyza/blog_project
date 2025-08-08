@@ -37,13 +37,25 @@ Route::resource('categories', CategoryController::class);
 
 Route::get('/index',[CategoryController::class,'index']);
 
-Route::get('/create', [CategoryController::class, 'create']);
+Route::get('categories/{category}/create', [CategoryController::class, 'create']);
 
 Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 
 Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
 
 Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
+Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
+
 
 
 
