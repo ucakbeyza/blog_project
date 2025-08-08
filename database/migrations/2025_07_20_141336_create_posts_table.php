@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
         $table->id();
         $table->string('title');
-        $table->text('text');
+        $table->text('content');
         $table->foreign('category_id')->references('id')->on('categories');
         $table->timestamps();
     });

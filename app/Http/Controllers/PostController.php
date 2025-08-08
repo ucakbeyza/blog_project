@@ -28,25 +28,29 @@ class PostController extends Controller
     /**
      * Store a newly created post in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required',
-            'category_id' => 'required|exists:categories,id'
-        ]);
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required', 
+        'category_id' => 'required|exists:categories,id' 
+    ]);
 
-        Post::create($request->all());
+    Post::create([
+        'title' => $validated['title'],
+        'text' => $validated['content'], 
+        'category_id' => $validated['category_id']
+    ]);
 
-        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
-    }
+    return redirect()->route('posts.index')->with('success', 'Post created');
+}
 
     /**
      * Display the specified post.
      */
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        return view("article", compact("post"));
     }
 
     /**
