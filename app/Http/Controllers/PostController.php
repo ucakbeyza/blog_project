@@ -59,7 +59,7 @@ public function store(Request $request)
     public function edit(Post $post)
     {
         $categories = Category::all();
-        dd($post->toArray());
+
         return view('posts.edit', compact('post', 'categories'));
     }
 
