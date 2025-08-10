@@ -34,6 +34,12 @@
                     @foreach($posts as $post)
                         <div class="list-group-item">
                             <div class="d-flex justify-content-between align-items-center">
+                                <div class="post">
+                                    @if($post->image)
+                                        <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" class="img-fluid post-image">
+                                    @endif
+        
+                                </div>
                                 <div>
                                     <h5>{{ $post->title }}</h5>
                                     <small class="text-muted">Category: {{ $post->category->name }}</small>

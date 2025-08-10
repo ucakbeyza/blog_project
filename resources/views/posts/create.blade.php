@@ -23,6 +23,14 @@
                 <label class="form-label">Content</label>
                 <textarea class="form-control" name="content" rows="5" required></textarea>
             </div>
+
+            <div class="form-group">
+                <label for="image">Blog Görseli</label>
+                <input type="file" class="form-control-file" id="image" name="image">
+                @if(isset($post) && $post->image)
+                <img src="{{ asset($post->image) }}" alt="Current image" class="img-thumbnail mt-2" style="max-height: 200px;">
+                @endif
+</div>
             
             <div class="mb-3">
                 <label class="form-label">Category</label>
